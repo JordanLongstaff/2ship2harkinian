@@ -1457,9 +1457,11 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
             MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                POLY_OPA_DISP = KaleidoScope_DrawPageSections(
+                    POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTexturesPAL[gSaveContext.options.language - 1]);
             } else {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTextures);
+                POLY_OPA_DISP =
+                    KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTextures);
             }
 
             GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, PAUSE_ITEM);
@@ -1483,7 +1485,8 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
             MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx,
+                                                              sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
             } else {
                 POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTextures);
             }
@@ -1518,9 +1521,11 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
             MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                POLY_OPA_DISP = KaleidoScope_DrawPageSections(
+                    POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTexturesPAL[gSaveContext.options.language - 1]);
             } else {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTextures);
+                POLY_OPA_DISP =
+                    KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTextures);
             }
 
             GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, PAUSE_QUEST);
@@ -1546,9 +1551,11 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
             MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                POLY_OPA_DISP = KaleidoScope_DrawPageSections(
+                    POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTexturesPAL[gSaveContext.options.language - 1]);
             } else {
-                POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTextures);
+                POLY_OPA_DISP =
+                    KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTextures);
             }
 
             GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, PAUSE_MASK);
@@ -1574,9 +1581,12 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
                     MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
                     if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                        POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                        POLY_OPA_DISP =
+                            KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx,
+                                                          sItemPageBgTexturesPAL[gSaveContext.options.language - 1]);
                     } else {
-                        POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTextures);
+                        POLY_OPA_DISP =
+                            KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->itemPageVtx, sItemPageBgTextures);
                     }
 
                     GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, pauseCtx->pageIndex);
@@ -1601,9 +1611,11 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
                 MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
                 if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(
+                        POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
                 } else {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTextures);
+                    POLY_OPA_DISP =
+                        KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTextures);
                 }
 
                 GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, pauseCtx->pageIndex);
@@ -1657,9 +1669,12 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
                 MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
                 if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                    POLY_OPA_DISP =
+                        KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx,
+                                                      sQuestPageBgTexturesPAL[gSaveContext.options.language - 1]);
                 } else {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTextures);
+                    POLY_OPA_DISP =
+                        KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->questPageVtx, sQuestPageBgTextures);
                 }
 
                 GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, pauseCtx->pageIndex);
@@ -1683,9 +1698,12 @@ void KaleidoScope_DrawPages(PlayState* play, GraphicsContext* gfxCtx) {
                 MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, gfxCtx);
 
                 if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTexturesPAL[gSaveContext.options.language - 1]);
+                    POLY_OPA_DISP =
+                        KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx,
+                                                      sMaskPageBgTexturesPAL[gSaveContext.options.language - 1]);
                 } else {
-                    POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTextures);
+                    POLY_OPA_DISP =
+                        KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->maskPageVtx, sMaskPageBgTextures);
                 }
 
                 GameInteractor_ExecuteBeforeKaleidoDrawPage(pauseCtx, pauseCtx->pageIndex);
@@ -1837,64 +1855,93 @@ TexturePtr gPauseToPageRightTexturesPAL[][4] = {
     { gPauseToMapESPTex, gPauseToQuestStatusESPTex, gPauseToMasksESPTex, gPauseToSelectItemESPTex },
 };
 
-TexturePtr gPauseToDecideTexturesPAL[] = {
-    gPauseToDecideENGTex, gPauseToDecideGERTex, gPauseToDecideFRATex, gPauseToDecideESPTex
-};
+TexturePtr gPauseToDecideTexturesPAL[] = { gPauseToDecideENGTex, gPauseToDecideGERTex, gPauseToDecideFRATex,
+                                           gPauseToDecideESPTex };
 
-TexturePtr gPauseToEquipTexturesPAL[] = {
-    gPauseToEquipENGTex, gPauseToEquipGERTex, gPauseToEquipFRATex, gPauseToEquipESPTex
-};
+TexturePtr gPauseToEquipTexturesPAL[] = { gPauseToEquipENGTex, gPauseToEquipGERTex, gPauseToEquipFRATex,
+                                          gPauseToEquipESPTex };
 
-TexturePtr gPauseToViewNotebookTexturesPAL[] = {
-    gPauseToViewNotebookENGTex, gPauseToViewNotebookGERTex, gPauseToViewNotebookFRATex, gPauseToViewNotebookESPTex
-};
+TexturePtr gPauseToViewNotebookTexturesPAL[] = { gPauseToViewNotebookENGTex, gPauseToViewNotebookGERTex,
+                                                 gPauseToViewNotebookFRATex, gPauseToViewNotebookESPTex };
 
-TexturePtr gPauseToPlayMelodyTexturesPAL[] = {
-    gPauseToPlayMelodyENGTex, gPauseToPlayMelodyGERTex, gPauseToPlayMelodyFRATex, gPauseToPlayMelodyESPTex
-};
+TexturePtr gPauseToPlayMelodyTexturesPAL[] = { gPauseToPlayMelodyENGTex, gPauseToPlayMelodyGERTex,
+                                               gPauseToPlayMelodyFRATex, gPauseToPlayMelodyESPTex };
 
 s16 gPauseToEquipPALWidths[] = {
-    64, 96, 80, 80,
+    64,
+    96,
+    80,
+    80,
 };
 //! @bug Originally French Lists a width of 72 but this is a bug and so 80 is used instead
 s16 gPauseToDecidePALWidths[] = {
-    64, 96, 80, 80,
+    64,
+    96,
+    80,
+    80,
 };
 
 s16 gPauseToPlayMelodyPALWidths[] = {
-    96, 112, 112, 112,
+    96,
+    112,
+    112,
+    112,
 };
 
 s16 gPauseToViewNotebookPALWidths[] = {
-    96, 112, 112, 112,
+    96,
+    112,
+    112,
+    112,
 };
 
 s16 D_8082ADD8_cp0[] = {
-    -33, -33, -33, -33,
+    -33,
+    -33,
+    -33,
+    -33,
 };
 
 s16 D_8082ADE0_cp0[] = {
-    -49, 17, -61, -61,
+    -49,
+    17,
+    -61,
+    -61,
 };
 
 s16 D_8082ADE8_cp0[] = {
-    47, -83, 44, 47,
+    47,
+    -83,
+    44,
+    47,
 };
 
 s16 D_8082ADF0_cp0[] = {
-    -60, 38, -60, -61,
+    -60,
+    38,
+    -60,
+    -61,
 };
 
 s16 D_8082ADF8_cp0[] = {
-    20, -98, 19, 19,
+    20,
+    -98,
+    19,
+    19,
 };
 
 s16 D_8082AE00_cp0[] = {
-    -52, 40, -62, -62,
+    -52,
+    40,
+    -62,
+    -62,
 };
 
 s16 D_8082AE08_cp0[] = {
-    20, -100, 18, 19,
+    20,
+    -100,
+    18,
+    19,
 };
 
 // #endregion
@@ -2141,34 +2188,36 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
 
         if (pauseCtx->state == PAUSE_STATE_SAVEPROMPT) {
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = D_8082ADD8_cp0[gSaveContext.options.language - 1];
-    
+                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] =
+                    D_8082ADD8_cp0[gSaveContext.options.language - 1];
+
                 pauseCtx->infoPanelVtx[17].v.ob[0] = pauseCtx->infoPanelVtx[19].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + 24;
-    
+
                 pauseCtx->infoPanelVtx[20].v.ob[0] = pauseCtx->infoPanelVtx[22].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + gPauseToDecidePALWidths[gSaveContext.options.language - 1];
-    
+
                 pauseCtx->infoPanelVtx[21].v.ob[0] = pauseCtx->infoPanelVtx[23].v.ob[0] =
                     pauseCtx->infoPanelVtx[20].v.ob[0] + gPauseToDecidePALWidths[gSaveContext.options.language - 1];
-    
+
                 pauseCtx->infoPanelVtx[17].v.tc[0] = pauseCtx->infoPanelVtx[19].v.tc[0] = 24 * (1 << 5);
 
-                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] = gPauseToDecidePALWidths[gSaveContext.options.language - 1] * (1 << 5);
+                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] =
+                    gPauseToDecidePALWidths[gSaveContext.options.language - 1] * (1 << 5);
             } else {
                 pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = -33;
-    
+
                 pauseCtx->infoPanelVtx[17].v.ob[0] = pauseCtx->infoPanelVtx[19].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + 24;
-    
+
                 pauseCtx->infoPanelVtx[20].v.ob[0] = pauseCtx->infoPanelVtx[22].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + 0x10;
-    
+
                 pauseCtx->infoPanelVtx[21].v.ob[0] = pauseCtx->infoPanelVtx[23].v.ob[0] =
                     pauseCtx->infoPanelVtx[20].v.ob[0] + 0x30;
-    
+
                 pauseCtx->infoPanelVtx[17].v.tc[0] = pauseCtx->infoPanelVtx[19].v.tc[0] = 24 * (1 << 5);
-    
+
                 // #region 2S2H - fixed vtx size for correct texture size
                 pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] = 64 * (1 << 5);
             }
@@ -2178,7 +2227,9 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
             gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 255, 255, 255, 255);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToDecideTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA, 64, 16, 4);
+                POLY_OPA_DISP =
+                    Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToDecideTexturesPAL[gSaveContext.options.language - 1],
+                                      G_IM_FMT_IA, 64, 16, 4);
             } else {
                 //! @bug: Incorrect dimensions. Should be 64x16
                 //! Fixed 11/23/23
@@ -2200,27 +2251,31 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
 
                 if (pauseCtx->cursorSpecialPos == PAUSE_CURSOR_PAGE_LEFT) {
                     if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                        POLY_OPA_DISP =
-                            Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToPageLeftTexturesPAL[gSaveContext.options.language - 1][pauseCtx->pageIndex], G_IM_FMT_IA, 128, 16, 0);
+                        POLY_OPA_DISP = Gfx_DrawTexQuad4b(
+                            POLY_OPA_DISP,
+                            gPauseToPageLeftTexturesPAL[gSaveContext.options.language - 1][pauseCtx->pageIndex],
+                            G_IM_FMT_IA, 128, 16, 0);
                     } else {
                         POLY_OPA_DISP =
                             Gfx_DrawTexQuad4b(POLY_OPA_DISP, D_8082B998[pauseCtx->pageIndex], G_IM_FMT_IA, 128, 16, 0);
                     }
                 } else {
                     if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                        POLY_OPA_DISP =
-                            Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToPageRightTexturesPAL[gSaveContext.options.language - 1][pauseCtx->pageIndex], G_IM_FMT_IA, 128, 16, 0);
+                        POLY_OPA_DISP = Gfx_DrawTexQuad4b(
+                            POLY_OPA_DISP,
+                            gPauseToPageRightTexturesPAL[gSaveContext.options.language - 1][pauseCtx->pageIndex],
+                            G_IM_FMT_IA, 128, 16, 0);
                     } else {
                         POLY_OPA_DISP =
                             Gfx_DrawTexQuad4b(POLY_OPA_DISP, D_8082B9A8[pauseCtx->pageIndex], G_IM_FMT_IA, 128, 16, 0);
-
                     }
                 }
             }
         } else if ((!pauseCtx->pageIndex || (pauseCtx->pageIndex == PAUSE_MASK)) &&
                    (pauseCtx->namedItem != PAUSE_ITEM_NONE)) {
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = D_8082ADE0_cp0[gSaveContext.options.language - 1] + GREG(2);
+                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] =
+                    D_8082ADE0_cp0[gSaveContext.options.language - 1] + GREG(2);
 
                 pauseCtx->infoPanelVtx[17].v.ob[0] = pauseCtx->infoPanelVtx[19].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + 48;
@@ -2233,7 +2288,8 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
 
                 pauseCtx->infoPanelVtx[17].v.tc[0] = pauseCtx->infoPanelVtx[19].v.tc[0] = 48 * (1 << 5);
 
-                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] = gPauseToEquipPALWidths[gSaveContext.options.language - 1] * (1 << 5);
+                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] =
+                    gPauseToEquipPALWidths[gSaveContext.options.language - 1] * (1 << 5);
             } else {
                 pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = -49;
 
@@ -2257,7 +2313,9 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
             gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 255, 255, 255, 255);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToEquipTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA, gPauseToEquipPALWidths[gSaveContext.options.language - 1], 16, 4);
+                POLY_OPA_DISP =
+                    Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToEquipTexturesPAL[gSaveContext.options.language - 1],
+                                      G_IM_FMT_IA, gPauseToEquipPALWidths[gSaveContext.options.language - 1], 16, 4);
             } else {
                 POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToEquipENGTex, G_IM_FMT_IA, 64, 16, 4);
             }
@@ -2268,20 +2326,24 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
             if (pauseCtx->namedItem != PAUSE_ITEM_NONE) {
                 // The cursor is on the bombers notebook
                 if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                    pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = D_8082ADF0_cp0[gSaveContext.options.language - 1] + GREG(0);
+                    pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] =
+                        D_8082ADF0_cp0[gSaveContext.options.language - 1] + GREG(0);
 
                     pauseCtx->infoPanelVtx[17].v.ob[0] = pauseCtx->infoPanelVtx[19].v.ob[0] =
                         pauseCtx->infoPanelVtx[16].v.ob[0] + 24;
 
                     pauseCtx->infoPanelVtx[20].v.ob[0] = pauseCtx->infoPanelVtx[22].v.ob[0] =
-                        pauseCtx->infoPanelVtx[16].v.ob[0] + D_8082ADF8_cp0[gSaveContext.options.language - 1] + GREG(1);
+                        pauseCtx->infoPanelVtx[16].v.ob[0] + D_8082ADF8_cp0[gSaveContext.options.language - 1] +
+                        GREG(1);
 
                     pauseCtx->infoPanelVtx[21].v.ob[0] = pauseCtx->infoPanelVtx[23].v.ob[0] =
-                        pauseCtx->infoPanelVtx[20].v.ob[0] + gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1];
+                        pauseCtx->infoPanelVtx[20].v.ob[0] +
+                        gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1];
 
                     pauseCtx->infoPanelVtx[17].v.tc[0] = pauseCtx->infoPanelVtx[19].v.tc[0] = 24 * (1 << 5);
 
-                    pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] = gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1] * (1 << 5);
+                    pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] =
+                        gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1] * (1 << 5);
                 } else {
                     pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = -58;
 
@@ -2305,16 +2367,20 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
                 gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 255, 255, 255, 255);
 
                 if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                    POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToViewNotebookTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA, gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1], 16, 4);
+                    POLY_OPA_DISP = Gfx_DrawTexQuad4b(
+                        POLY_OPA_DISP, gPauseToViewNotebookTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA,
+                        gPauseToViewNotebookPALWidths[gSaveContext.options.language - 1], 16, 4);
                 } else {
-                    POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToViewNotebookENGTex, G_IM_FMT_IA, 96, 16, 4);
+                    POLY_OPA_DISP =
+                        Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToViewNotebookENGTex, G_IM_FMT_IA, 96, 16, 4);
                 }
             }
         } else if ((pauseCtx->pageIndex == PAUSE_QUEST) && (pauseCtx->cursorSlot[PAUSE_QUEST] >= QUEST_SONG_SONATA) &&
                    (pauseCtx->cursorSlot[PAUSE_QUEST] <= QUEST_SONG_SUN) && (pauseCtx->namedItem != PAUSE_ITEM_NONE)) {
             // The cursor is on a learned song
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = D_8082AE00_cp0[gSaveContext.options.language - 1] + GREG(4);
+                pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] =
+                    D_8082AE00_cp0[gSaveContext.options.language - 1] + GREG(4);
 
                 pauseCtx->infoPanelVtx[17].v.ob[0] = pauseCtx->infoPanelVtx[19].v.ob[0] =
                     pauseCtx->infoPanelVtx[16].v.ob[0] + 24;
@@ -2327,7 +2393,8 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
 
                 pauseCtx->infoPanelVtx[17].v.tc[0] = pauseCtx->infoPanelVtx[19].v.tc[0] = 24 * (1 << 5);
 
-                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] = gPauseToPlayMelodyPALWidths[gSaveContext.options.language - 1] * (1 << 5);
+                pauseCtx->infoPanelVtx[21].v.tc[0] = pauseCtx->infoPanelVtx[23].v.tc[0] =
+                    gPauseToPlayMelodyPALWidths[gSaveContext.options.language - 1] * (1 << 5);
             } else {
                 pauseCtx->infoPanelVtx[16].v.ob[0] = pauseCtx->infoPanelVtx[18].v.ob[0] = -55;
 
@@ -2351,7 +2418,9 @@ void KaleidoScope_DrawInfoPanel(PlayState* play) {
             gDPSetPrimColor(POLY_OPA_DISP++, 0, 0, 255, 255, 255, 255);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToPlayMelodyTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA, gPauseToPlayMelodyPALWidths[gSaveContext.options.language - 1], 16, 4);
+                POLY_OPA_DISP = Gfx_DrawTexQuad4b(
+                    POLY_OPA_DISP, gPauseToPlayMelodyTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA,
+                    gPauseToPlayMelodyPALWidths[gSaveContext.options.language - 1], 16, 4);
             } else {
                 POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP, gPauseToPlayMelodyENGTex, G_IM_FMT_IA, 96, 16, 4);
             }
@@ -2427,7 +2496,8 @@ void KaleidoScope_DrawOwlWarpMapPage(PlayState* play) {
     MATRIX_FINALIZE_AND_LOAD(POLY_OPA_DISP++, play->state.gfxCtx);
 
     if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-        POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
+        POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx,
+                                                      sMapPageBgTexturesPAL[gSaveContext.options.language - 1]);
     } else {
         POLY_OPA_DISP = KaleidoScope_DrawPageSections(POLY_OPA_DISP, pauseCtx->mapPageVtx, sMapPageBgTextures);
     }

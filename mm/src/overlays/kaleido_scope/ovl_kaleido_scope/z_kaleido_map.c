@@ -128,10 +128,14 @@ TexturePtr sDungeonTitleTexturesGC[] = {
 };
 
 TexturePtr sDungeonTitleTexturesGCPAL[][4] = {
-    { gPauseWoodfallTitleGCENGTex, gPauseSnowheadTitleGCENGTex, gPauseGreatBayTitleGCENGTex, gPauseStoneTowerTitleGCENGTex },
-    { gPauseWoodfallTitleGCGERTex, gPauseSnowheadTitleGCGERTex, gPauseGreatBayTitleGCGERTex, gPauseStoneTowerTitleGCGERTex },
-    { gPauseWoodfallTitleGCFRATex, gPauseSnowheadTitleGCFRATex, gPauseGreatBayTitleGCFRATex, gPauseStoneTowerTitleGCFRATex },
-    { gPauseWoodfallTitleGCESPTex, gPauseSnowheadTitleGCESPTex, gPauseGreatBayTitleGCESPTex, gPauseStoneTowerTitleGCESPTex },
+    { gPauseWoodfallTitleGCENGTex, gPauseSnowheadTitleGCENGTex, gPauseGreatBayTitleGCENGTex,
+      gPauseStoneTowerTitleGCENGTex },
+    { gPauseWoodfallTitleGCGERTex, gPauseSnowheadTitleGCGERTex, gPauseGreatBayTitleGCGERTex,
+      gPauseStoneTowerTitleGCGERTex },
+    { gPauseWoodfallTitleGCFRATex, gPauseSnowheadTitleGCFRATex, gPauseGreatBayTitleGCFRATex,
+      gPauseStoneTowerTitleGCFRATex },
+    { gPauseWoodfallTitleGCESPTex, gPauseSnowheadTitleGCESPTex, gPauseGreatBayTitleGCESPTex,
+      gPauseStoneTowerTitleGCESPTex },
 };
 // #endregion
 
@@ -210,14 +214,18 @@ void KaleidoScope_DrawDungeonMap(PlayState* play) {
     if (ResourceMgr_GetGamePlatform(0) == GAME_PLATFORM_GC) {
         if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
             POLY_OPA_DISP =
-               Gfx_DrawTexQuad4b(POLY_OPA_DISP, sDungeonTitleTexturesGCPAL[gSaveContext.options.language - 1][((void)0, gSaveContext.dungeonSceneSharedIndex)], G_IM_FMT_IA, 128, 16, 0);
+                Gfx_DrawTexQuad4b(POLY_OPA_DISP,
+                                  sDungeonTitleTexturesGCPAL[gSaveContext.options.language - 1]
+                                                            [((void)0, gSaveContext.dungeonSceneSharedIndex)],
+                                  G_IM_FMT_IA, 128, 16, 0);
         } else {
-            POLY_OPA_DISP =
-               Gfx_DrawTexQuad4b(POLY_OPA_DISP, sDungeonTitleTexturesGC[((void)0, gSaveContext.dungeonSceneSharedIndex)], G_IM_FMT_IA, 128, 16, 0);
+            POLY_OPA_DISP = Gfx_DrawTexQuad4b(POLY_OPA_DISP,
+                                              sDungeonTitleTexturesGC[((void)0, gSaveContext.dungeonSceneSharedIndex)],
+                                              G_IM_FMT_IA, 128, 16, 0);
         }
     } else {
-        POLY_OPA_DISP =
-           Gfx_DrawTexQuadIA8(POLY_OPA_DISP, sDungeonTitleTextures[((void)0, gSaveContext.dungeonSceneSharedIndex)], 128, 16, 0);
+        POLY_OPA_DISP = Gfx_DrawTexQuadIA8(
+            POLY_OPA_DISP, sDungeonTitleTextures[((void)0, gSaveContext.dungeonSceneSharedIndex)], 128, 16, 0);
     }
 
     gDPPipeSync(POLY_OPA_DISP++);

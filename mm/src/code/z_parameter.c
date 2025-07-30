@@ -5946,7 +5946,10 @@ void Interface_DrawItemButtons(PlayState* play) {
         gTatlCUpESPTex, // LANGUAGE_SPA
     };
     static TexturePtr sCUpLabelTexturesPAL[] = {
-        gTatlCUpPALENGTex, gTatlCUpPALGERTex, gTatlCUpPALFRATex, gTatlCUpPALESPTex,
+        gTatlCUpPALENGTex,
+        gTatlCUpPALGERTex,
+        gTatlCUpPALFRATex,
+        gTatlCUpPALESPTex,
     };
     static s16 sStartButtonLeftPos[LANGUAGE_MAX] = {
         // Remnant of OoT
@@ -6088,13 +6091,13 @@ void Interface_DrawItemButtons(PlayState* play) {
             gDPSetCombineLERP(OVERLAY_DISP++, PRIMITIVE, ENVIRONMENT, TEXEL0, ENVIRONMENT, TEXEL0, 0, PRIMITIVE, 0,
                               PRIMITIVE, ENVIRONMENT, TEXEL0, ENVIRONMENT, TEXEL0, 0, PRIMITIVE, 0);
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                gDPLoadTextureBlock_4b(OVERLAY_DISP++, sCUpLabelTexturesPAL[gSaveContext.options.language - 1], G_IM_FMT_IA, 32, 12,
-                                       0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK,
-                                       G_TX_NOLOD, G_TX_NOLOD);
+                gDPLoadTextureBlock_4b(OVERLAY_DISP++, sCUpLabelTexturesPAL[gSaveContext.options.language - 1],
+                                       G_IM_FMT_IA, 32, 12, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP,
+                                       G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
             } else {
-                gDPLoadTextureBlock_4b(OVERLAY_DISP++, sCUpLabelTextures[gSaveContext.options.language], G_IM_FMT_IA, 32, 12,
-                                       0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK,
-                                       G_TX_NOLOD, G_TX_NOLOD);
+                gDPLoadTextureBlock_4b(OVERLAY_DISP++, sCUpLabelTextures[gSaveContext.options.language], G_IM_FMT_IA,
+                                       32, 12, 0, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK,
+                                       G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
             }
 
             // #region 2S2H [Cosmetic] Hud Editor
@@ -8049,10 +8052,14 @@ TexturePtr sPerfectLettersTextures[PERFECT_LETTERS_NUM_LETTERS] = {
 
 // #region 2S2H [PAL]
 TexturePtr sPerfectLettersTexturesPAL[][PERFECT_LETTERS_NUM_LETTERS] = {
-    gPerfectLetterPTex, gPerfectLetterETex, gPerfectLetterRTex, gPerfectLetterFTex, gPerfectLetterETex, gPerfectLetterCPALENGTex, gPerfectLetterTTex, gPerfectLetterExclamationPALENGTex,
-    gPerfectLetterPTex, gPerfectLetterETex, gPerfectLetterRTex, gPerfectLetterFTex, gPerfectLetterETex, gPerfectLetterKPALGERTex, gPerfectLetterTTex, gPerfectLetterExclamationPALGERTex,
-    gPerfectLetterPTex, gPerfectLetterAPALFRATex, gPerfectLetterRTex, gPerfectLetterFTex, gPerfectLetterAPALFRATex, gPerfectLetterIPALFRATex, gPerfectLetterTTex, gPerfectLetterExclamationPALFRATex,
-    gPerfectLetterPTex, gPerfectLetterETex, gPerfectLetterRTex, gPerfectLetterFTex, gPerfectLetterETex, gPerfectLetterCPALESPTex, gPerfectLetterTTex, gPerfectLetterOPALESPTex,
+    gPerfectLetterPTex,       gPerfectLetterETex,       gPerfectLetterRTex, gPerfectLetterFTex,
+    gPerfectLetterETex,       gPerfectLetterCPALENGTex, gPerfectLetterTTex, gPerfectLetterExclamationPALENGTex,
+    gPerfectLetterPTex,       gPerfectLetterETex,       gPerfectLetterRTex, gPerfectLetterFTex,
+    gPerfectLetterETex,       gPerfectLetterKPALGERTex, gPerfectLetterTTex, gPerfectLetterExclamationPALGERTex,
+    gPerfectLetterPTex,       gPerfectLetterAPALFRATex, gPerfectLetterRTex, gPerfectLetterFTex,
+    gPerfectLetterAPALFRATex, gPerfectLetterIPALFRATex, gPerfectLetterTTex, gPerfectLetterExclamationPALFRATex,
+    gPerfectLetterPTex,       gPerfectLetterETex,       gPerfectLetterRTex, gPerfectLetterFTex,
+    gPerfectLetterETex,       gPerfectLetterCPALESPTex, gPerfectLetterTTex, gPerfectLetterOPALESPTex,
 };
 // #endregion
 
@@ -8089,7 +8096,9 @@ void Interface_DrawPerfectLetters(PlayState* play) {
             gSPVertex(OVERLAY_DISP++, &interfaceCtx->actionVtx[44 + vtxOffset], 4, 0);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                OVERLAY_DISP = Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTexturesPAL[gSaveContext.options.language - 1][i], G_IM_FMT_I, 32, 33, 0);
+                OVERLAY_DISP =
+                    Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTexturesPAL[gSaveContext.options.language - 1][i],
+                                      G_IM_FMT_I, 32, 33, 0);
             } else {
                 OVERLAY_DISP = Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTextures[i], G_IM_FMT_I, 32, 33, 0);
             }
@@ -8107,7 +8116,9 @@ void Interface_DrawPerfectLetters(PlayState* play) {
             gSPVertex(OVERLAY_DISP++, &interfaceCtx->actionVtx[76 + vtxOffset], 4, 0);
 
             if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                OVERLAY_DISP = Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTexturesPAL[gSaveContext.options.language - 1][i], G_IM_FMT_I, 32, 33, 0);
+                OVERLAY_DISP =
+                    Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTexturesPAL[gSaveContext.options.language - 1][i],
+                                      G_IM_FMT_I, 32, 33, 0);
             } else {
                 OVERLAY_DISP = Gfx_DrawTexQuad4b(OVERLAY_DISP, sPerfectLettersTextures[i], G_IM_FMT_I, 32, 33, 0);
             }
@@ -9475,8 +9486,9 @@ void Interface_Draw(PlayState* play) {
                     gSPVertex(OVERLAY_DISP++, &interfaceCtx->actionVtx[40], 4, 0);
 
                     if (ResourceMgr_GetGameRegion(0) == GAME_REGION_PAL) {
-                        OVERLAY_DISP = Gfx_DrawTexQuadIA8(OVERLAY_DISP, sMinigameCountdownTexturesPAL[gSaveContext.options.language - 1][sp2CE],
-                                                          sMinigameCountdownTexWidths[sp2CE], 32, 0);
+                        OVERLAY_DISP = Gfx_DrawTexQuadIA8(
+                            OVERLAY_DISP, sMinigameCountdownTexturesPAL[gSaveContext.options.language - 1][sp2CE],
+                            sMinigameCountdownTexWidths[sp2CE], 32, 0);
                     } else {
                         OVERLAY_DISP = Gfx_DrawTexQuadIA8(OVERLAY_DISP, sMinigameCountdownTextures[sp2CE],
                                                           sMinigameCountdownTexWidths[sp2CE], 32, 0);

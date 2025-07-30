@@ -724,11 +724,12 @@ typedef enum TitleDisplayLanguage {
 void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxp) {
     // #region 2S2H [PAL] - add press start font indices and spacings for other languages
     static u8 sPressStartFontIndicesPAL[][15] = {
-        { 0x19, 0x1B, 0x0E, 0x1C, 0x1C, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E },                         // TITLE_LANGUAGE_ENG
-        { 0x0D, 0x1B, 0x57, 0x0C, 0x14, 0x0E, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E },                   // TITLE_LANGUAGE_GER
-        { 0x0A, 0x19, 0x19, 0x1E, 0x22, 0x0E, 0x23, 0x1C, 0x1E, 0x1B, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D }, // TITLE_LANGUAGE_FRE
-        { 0x19, 0x1E, 0x15, 0x1C, 0x0A, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E },                         // TITLE_LANGUAGE_SPA
-    }; // Indices into this->font.fontBuf
+        { 0x19, 0x1B, 0x0E, 0x1C, 0x1C, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E },       // TITLE_LANGUAGE_ENG
+        { 0x0D, 0x1B, 0x57, 0x0C, 0x14, 0x0E, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E }, // TITLE_LANGUAGE_GER
+        { 0x0A, 0x19, 0x19, 0x1E, 0x22, 0x0E, 0x23, 0x1C, 0x1E, 0x1B, 0x1C, 0x1D, 0x0A, 0x1B,
+          0x1D },                                                             // TITLE_LANGUAGE_FRE
+        { 0x19, 0x1E, 0x15, 0x1C, 0x0A, 0x1C, 0x1D, 0x0A, 0x1B, 0x1D, 0x3E }, // TITLE_LANGUAGE_SPA
+    };                                                                        // Indices into this->font.fontBuf
     static u8 sPressStartFontWidthsPAL[][15] = {
         { 6, 7, 5, 7, 12, 7, 6, 8, 7, 6, 5 },              // TITLE_LANGUAGE_ENG
         { 7, 7, 7, 7, 7, 10, 7, 6, 8, 7, 6, 5 },           // TITLE_LANGUAGE_GER
@@ -997,8 +998,8 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxp) {
             // #region 2S2H [PAL] - Draw PRESS START in all languages
             // Text shadow
             gDPPipeSync(gfx++);
-            gDPSetCombineLERP(gfx++, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE, 0, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE,
-                            0);
+            gDPSetCombineLERP(gfx++, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE, 0, 0, 0, 0, PRIMITIVE, TEXEL0, 0,
+                              PRIMITIVE, 0);
             gDPSetPrimColor(gfx++, 0, 0, 0, 0, 0, sTextAlpha);
 
             switch (GET_TITLE_DISPLAY_LANGUAGE) {
@@ -1020,8 +1021,9 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxp) {
                 if (sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] == 0x3E) {
                     break;
                 }
-                EnMag_DrawCharTexture(&gfx, font->fontBuf + sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] * FONT_CHAR_TEX_SIZE, rectLeft,
-                                    PRESS_START_TOP + 1);
+                EnMag_DrawCharTexture(
+                    &gfx, font->fontBuf + sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] * FONT_CHAR_TEX_SIZE,
+                    rectLeft, PRESS_START_TOP + 1);
 
                 rectLeft += sPressStartFontWidthsPAL[GET_TITLE_DISPLAY_LANGUAGE][i];
             }
@@ -1049,8 +1051,9 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxp) {
                 if (sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] == 0x3E) {
                     break;
                 }
-                EnMag_DrawCharTexture(&gfx, font->fontBuf + sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] * FONT_CHAR_TEX_SIZE, rectLeft,
-                                    PRESS_START_TOP + 1);
+                EnMag_DrawCharTexture(
+                    &gfx, font->fontBuf + sPressStartFontIndicesPAL[GET_TITLE_DISPLAY_LANGUAGE][i] * FONT_CHAR_TEX_SIZE,
+                    rectLeft, PRESS_START_TOP + 1);
                 rectLeft += sPressStartFontWidthsPAL[GET_TITLE_DISPLAY_LANGUAGE][i];
             }
 
@@ -1062,14 +1065,14 @@ void EnMag_DrawInner(Actor* thisx, PlayState* play, Gfx** gfxp) {
                 if (sTextAlphaTargetIndex == 0) {
                     gSaveContext.unk_3CA6 = (gSaveContext.unk_3CA6 + 1) & 3;
                 }
-            }   
+            }
             // #endregion
         } else {
 
             // Text shadow
             gDPPipeSync(gfx++);
-            gDPSetCombineLERP(gfx++, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE, 0, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE,
-                            0);
+            gDPSetCombineLERP(gfx++, 0, 0, 0, PRIMITIVE, TEXEL0, 0, PRIMITIVE, 0, 0, 0, 0, PRIMITIVE, TEXEL0, 0,
+                              PRIMITIVE, 0);
             gDPSetPrimColor(gfx++, 0, 0, 0, 0, 0, sTextAlpha);
 
             rectLeft = PRESS_START_LEFT + 1;

@@ -49,11 +49,8 @@ static const std::unordered_map<int32_t, const char*> menuThemeOptions = {
 };
 
 static const std::unordered_map<int32_t, const char*> languageOptions = {
-    { LANGUAGE_JPN, "Japanese" },
-    { LANGUAGE_ENG, "English" },
-    { LANGUAGE_GER, "German" },
-    { LANGUAGE_FRE, "French" },
-    { LANGUAGE_SPA, "Spanish" },
+    { LANGUAGE_JPN, "Japanese" }, { LANGUAGE_ENG, "English" }, { LANGUAGE_GER, "German" },
+    { LANGUAGE_FRE, "French" },   { LANGUAGE_SPA, "Spanish" },
 };
 
 static const std::vector<const char*> alwaysWinDoggyraceOptions = {
@@ -446,10 +443,10 @@ void BenMenu::AddSettings() {
     AddSidebarEntry("Settings", "Language", 1);
     AddWidget(path, "Language Select", WIDGET_CVAR_COMBOBOX)
         .CVar("gSettings.Language")
-            .Options(ComboboxOptions()
-                        .Tooltip("Sets the language for the game.")
-                        .ComboMap(&languageOptions)
-                        .DefaultIndex(LANGUAGE_ENG));
+        .Options(ComboboxOptions()
+                     .Tooltip("Sets the language for the game.")
+                     .ComboMap(&languageOptions)
+                     .DefaultIndex(LANGUAGE_ENG));
 
     // Audio Settings
     path.sidebarName = "Audio";
